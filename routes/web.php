@@ -25,7 +25,7 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
-    Route::get('/beranda', [AdminController::class, 'index'])->name('home.admin');
+    Route::get('/beranda', [AdminController::class, 'index'])->name('admin.beranda');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
