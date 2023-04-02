@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
 </head>
 
-<aside style="background: " class="main-sidebar">
+<aside style="background: black" class="main-sidebar">
     <!-- Brand Logo -->
     <a style="color: white;" href="../../index3.html" class="brand-link">
         <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -25,26 +25,42 @@
                     </a>
                 </li>
                 <li class="nav-item pill-2">
-                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('profile') ? 'active' : '') }}">
+                    <a style="color: white;" href="{{ route('admin.user') }}" class="nav-link {{ (request()->routeIs('admin.user') ? 'active' : '') }}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Profile
+                            User
                         </p>
                     </a>
                 </li>
                 <li class="nav-item pill-3">
-                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('pengalaman') ? 'active' : '') }}">
+                    <a style="color: white;" href="{{ route('mapel') }}" class="nav-link {{ (request()->routeIs('mapel') ? 'active' : '') }}">
                         <i class="nav-icon fa fa-book"></i>
                         <p>
-                            Pengalaman Kuliah
+                            Mata Pelajaran
                         </p>
                     </a>
                 </li>
                 <li class="nav-item pill-3">
-                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('hobi') ? 'active' : '') }}">
+                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('tryout') ? 'active' : '') }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Hobi
+                            Tryout
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item pill-3">
+                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('soal') ? 'active' : '') }}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Soal
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item pill-3">
+                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('kartuSoal') ? 'active' : '') }}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Kartu Soal
                         </p>
                     </a>
                 </li>

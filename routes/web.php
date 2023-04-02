@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Auth::routes();
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/beranda', [AdminController::class, 'index'])->name('admin.beranda');
+    Route::get('/user', [UserController::class, 'index'])->name('admin.user');
+    Route::post('CariMapel', [MataPelajaranController::class, 'cariMapel'])->name('cariMapel');
+    Route::resource('mapel', MataPelajaranController::class);
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
@@ -44,3 +48,6 @@ Route::get('/welcome', [HomeController::class, 'welcome'])->name('home.welcome')
 // {
 //     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('home.admin');
 // });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
