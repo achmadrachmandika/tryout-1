@@ -63,7 +63,6 @@ class TryoutController extends Controller
         $request->validate([
             'namaTryout' => 'required',
             'detailTryout' => 'required',
-            'mata_pelajaran_id' => 'required',
         ]);
         Tryout::find($id)->update($request->all());
         return redirect()->route('tryout.index')->with('success', 'Mata Pelajaran Berhasil Ditambahkan');
