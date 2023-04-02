@@ -32,6 +32,7 @@
         <th>Id</th>
         <th>Tryout</th>
         <th>Detail</th>
+        <th>Pembuat</th>
         <th>Mata Pelajaran</th>
     </tr>
     @foreach ($tryout as $t)
@@ -40,6 +41,7 @@
         <td>{{ $t->id }}</td>
         <td>{{ $t->namaTryout }}</td>
         <td>{{ $t->detailTryout }}</td>
+        <td>{{ $t->user_id }}</td>
         <td>{{ $t->mata_pelajaran_id }}</td>
 
         <td>

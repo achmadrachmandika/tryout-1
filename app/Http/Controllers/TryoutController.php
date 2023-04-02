@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tryout;
+use App\Models\MataPelajaran;
+use App\Models\User;
 use Illuminate\Http\Response;
 
 class TryoutController extends Controller
@@ -19,19 +21,15 @@ class TryoutController extends Controller
     {       
         $tryout = Tryout::all(); // Mengambil semua isi tabel
         return view('admin.tryout', compact('tryout'));
-
-        $mapel = MataPelajaran::all();
-        return view('tryout.create')->with('mapel',$mapel);
     }
+    
 
-    // public function mapel(){
-    //     $mapel = MataPelajaran::all();
-    //     return view('admin.tryout')->with('user',$mapel);
-    // }
 
-    public function create()
+   public function create()
     {
-        return view('tryout.create');
+        $user = User::all();
+        $mapel = MataPelajaran::all();
+        return view('tryout.create', compact('user', 'mapel'));
     }
 
     public function store(Request $request)
@@ -40,6 +38,7 @@ class TryoutController extends Controller
             'id' => 'required',
             'namaTryout' => 'required',
             'detailTryout' => 'required',
+            'user_id' => 'required',
             'mata_pelajaran_id' => 'required',
         ]);
         Tryout::create($request->all());

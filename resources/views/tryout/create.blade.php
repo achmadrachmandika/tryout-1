@@ -29,16 +29,24 @@
                             <input type="text" name="namaTryout" class="form-control" id="namaTryout" aria-describedby="namaTryout" >
                         </div>
                         <div class="form-group">
-                            <label for="namaTryout">Detail Tryout</label>
-                            <input type="text" name="namaTryout" class="form-control" id="namaTryout" aria-describedby="namaTryout" >
+                            <label for="detailTryout">Detail Tryout</label>
+                            <input type="text" name="detailTryout" class="form-control" id="detailTryout" aria-describedby="detailTryout" >
                         </div>
                         <div class="form-group">
-                            <label for="namaTryout">Mata Pelajaran</label>
-                            @foreach($mapel as $m)
-                            <select name="mapel" class="form-control">
-                                <option value="{{ $m->id }}">{{ $m->mata_pelajaran_id }}</option>
-                            </select>
-                            @endforeach
+                            <label for="user_id">User</label>
+                            <select name="user_id" class="form-control">
+                                @foreach($user as $u)
+                                    <option value="{{ $u->id }}">{{ $u->username }}</option>
+                                @endforeach
+                            </select>  
+                        </div>
+                        <div class="form-group">
+                            <label for="mata_pelajaran_id">Mata Pelajaran</label>
+                            <select name="mata_pelajaran_id" class="form-control">
+                                @foreach($mapel as $m)
+                                    <option value="{{ $m->id }}">{{ $m->namaMapel }}</option>
+                                @endforeach
+                            </select>  
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </form>

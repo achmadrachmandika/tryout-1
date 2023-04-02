@@ -20,9 +20,9 @@ class Tryout extends Authenticatable
     protected $fillable = [
         'id', 
         'namaTryout', 
-        'detailTryout', 
-        'idUser', 
-        'idMapel' 
+        'detailTryout',
+        'user_id', 
+        'mata_pelajaran_id',
     ];
 
     /**
