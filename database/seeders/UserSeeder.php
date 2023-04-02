@@ -19,10 +19,10 @@ class UserSeeder extends Seeder
             // 'email' => 'deaasss@gmail.com',
             // 'telepon' => '0852229339',
             // 'role' => '0'],
-            ['name' => 'Rizky Randal',
-            'username' => 'Admin2',
+            ['name' => 'Noioo',
+            'username' => 'Admin4',
             'password' => bcrypt('123'),
-            'email' => 'rizky@gmail.com',
+            'email' => 'ri@gmail.com',
             'telepon' => '0858930512',
             'role' => '1'],
         ];

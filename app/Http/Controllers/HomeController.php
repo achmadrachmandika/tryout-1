@@ -35,7 +35,8 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('user',['user' => $user]);
+        // return view('user',['user' => $user]);
+        return view('layouts.app2');
     }
 
     public function welcome()
