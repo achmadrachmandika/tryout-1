@@ -9,15 +9,16 @@ class MataPelajaran extends Model
 {
     use HasFactory;
     protected $table = 'matapelajarans';
-
+    protected $primaryKey = 'id';
+    public $timestamps= false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        // 'idMapel', 
-        'namaMapel'
+        'id', 
+        'namaMapel',
     ];
 
     /**

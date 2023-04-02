@@ -12,12 +12,12 @@
     @csrf
     <div class="col-md-6">
         <div class="d-flex flex-row">
-            <input type="text" value="{{ (request()->cari) ? request()->cari : '' }}" name="cari" class="form-control" placeholder="cari mahasiswa">
+            <input type="text" value="{{ (request()->cari) ? request()->cari : '' }}" name="cari" class="form-control" placeholder="cari mata pelajaran">
             <button type="submit" class="btn btn-primary ml-4">Cari</button>
         </div>
     </div>
     <div class="col-md-6 d-flex flex-row justify-content-end">
-        <a class="btn btn-success" href="{{ route('mapel.create') }}"> Input Mahasiswa</a>
+        <a class="btn btn-success" href="{{ route('mapel.create') }}"> Input Mata Pelajaran</a>
     </div>
 </form>
 
@@ -39,9 +39,9 @@
         <td>{{ $m->namaMapel }}</td>
 
         <td>
-            <form action="{{ route('mapel.destroy',$mapel->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('mapel.show',$mapel->id) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('mapel.edit',$mapel->id) }}">Edit</a>
+            <form action="{{ route('mapel.destroy',$m->id) }}" method="POST">
+                <a class="btn btn-info" href="{{ route('mapel.show',$m->id) }}">Show</a>
+                <a class="btn btn-primary" href="{{ route('mapel.edit',$m->id) }}">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -50,10 +50,5 @@
     </tr>
  @endforeach
  </table>
-    
- <div class="row">
-    {{ $mapel->links() }}
-</div>
-
-
+ 
 @endsection

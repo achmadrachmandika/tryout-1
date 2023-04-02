@@ -1,4 +1,4 @@
-@extends('layout.app2')
+@extends('layouts.app2')
 
 @section('content')
     <div class="container mt-5">
@@ -9,10 +9,10 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>Mata Pelajaran: </b>{{$mapel->namaPelajaran}}</li>
+                        <li class="list-group-item"><b>Mata Pelajaran: </b>{{$mapel->namaMapel}}</li>
                     </ul>
                 </div>
-                <a class="btn btn-success mt-3" href="{{ route('admin.mapel') }}">Kembali</a>
+                <a class="btn btn-success mt-3" href="{{ route('mapel.index') }}">Kembali</a>
             </div>
         </div>
     </div>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MataPelajaranController;
+use App\Http\Controllers\TryoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::get('/beranda', [AdminController::class, 'index'])->name('admin.beranda');
     Route::get('/user', [UserController::class, 'index'])->name('admin.user');
     Route::post('CariMapel', [MataPelajaranController::class, 'cariMapel'])->name('cariMapel');
-    Route::resource('mapel', MataPelajaranController::class);
+    Route::resource('mapel', MataPelajaranController::class)->name('mapel', 'admin.mapel');
+    Route::post('CariTryout', [TryoutController::class, 'cariTryout'])->name('cariTryout');
+    Route::resource('tryout', TryoutController::class)->name('tryout', 'admin.tryout');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');

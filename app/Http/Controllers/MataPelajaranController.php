@@ -17,7 +17,7 @@ class MataPelajaranController extends Controller
 
     public function index()
     {       
-        $mapel = MataPelajaran::paginate(5);
+        $mapel = MataPelajaran::all(); // Mengambil semua isi tabel
         return view('admin.mapel', compact('mapel'));
     }
 
@@ -29,10 +29,11 @@ class MataPelajaranController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id' => 'required',
             'namaMapel' => 'required',
         ]);
         MataPelajaran::create($request->all());
-        return redirect()->route('admin.mapel')->with('success', 'Mata Pelajaran Berhasil Ditambahkan');
+        return redirect()->route('mapel.index')->with('success', 'Mata Pelajaran Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -54,13 +55,13 @@ class MataPelajaranController extends Controller
             'namaMapel' => 'required',
         ]);
         MataPelajaran::find($id)->update($request->all());
-        return redirect()->route('admin.mapel')->with('success', 'Mata Pelajaran Berhasil Ditambahkan');
+        return redirect()->route('mapel.index')->with('success', 'Mata Pelajaran Berhasil Ditambahkan');
     }
 
     public function destroy($id)
     {
         MataPelajaran::find($id)->delete();
-        return redirect()->route('admin.mapel')-> with('success', 'Mata Pelajaran Berhasil Dihapus');
+        return redirect()->route('mapel.index')-> with('success', 'Mata Pelajaran Berhasil Dihapus');
 
     }
 }

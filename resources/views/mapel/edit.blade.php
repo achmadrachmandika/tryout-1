@@ -1,4 +1,4 @@
-@extends('mahasiswas.layout')
+@extends('layouts.app2')
 
 @section('content')
 
@@ -20,7 +20,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="{{ route('mapel.update', $mapel->nim) }}" id="myForm">
+                    <form method="post" action="{{ route('mapel.update', $mapel->id) }}" id="myForm">
                         @csrf
                         @method('PUT')
                         <div class="form-group">

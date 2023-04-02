@@ -13,17 +13,17 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $users = [
-            // ['name' => 'yono',
-            // 'username' => 'Siswa2',
-            // 'password' => bcrypt('123'),
-            // 'email' => 'deaasss@gmail.com',
-            // 'telepon' => '0852229339',
-            // 'role' => '0'],
-            ['name' => 'Noioo',
-            'username' => 'Admin4',
+            ['name' => 'Devano abe',
+            'username' => 'Siswa1',
             'password' => bcrypt('123'),
-            'email' => 'ri@gmail.com',
-            'telepon' => '0858930512',
+            'email' => 'abe@gmail.com',
+            'telepon' => '081339059398',
+            'role' => '0'],
+            ['name' => 'Rizky',
+            'username' => 'Admin1',
+            'password' => bcrypt('123'),
+            'email' => 'rizky@gmail.com',
+            'telepon' => '081339059922',
             'role' => '1'],
         ];
         foreach($users as $user)

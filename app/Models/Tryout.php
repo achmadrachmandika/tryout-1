@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Tryout extends Authenticatable
 {
     protected $table = 'tryouts';
+    protected $primaryKey = 'id';
+    public $timestamps= false;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +18,7 @@ class Tryout extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        // 'idTryout', 
+        'id', 
         'namaTryout', 
         'detailTryout', 
         'idUser', 

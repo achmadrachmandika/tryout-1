@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item pill-3">
-                    <a style="color: white;" href="{{ route('mapel') }}" class="nav-link {{ (request()->routeIs('mapel') ? 'active' : '') }}">
+                    <a style="color: white;" href="{{ route('mapel.index') }}" class="nav-link {{ (request()->routeIs('mapel.index') ? 'active' : '') }}">
                         <i class="nav-icon fa fa-book"></i>
                         <p>
                             Mata Pelajaran
@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="nav-item pill-3">
-                    <a style="color: white;" href="#" class="nav-link {{ (request()->routeIs('tryout') ? 'active' : '') }}">
+                    <a style="color: white;" href="{{ route('tryout.index') }}" class="nav-link {{ (request()->routeIs('tryout.index') ? 'active' : '') }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Tryout
