@@ -1,7 +1,4 @@
-<footer style="background-color: black;" class="main-footer">
-    <div class="float-right d-none d-sm-block">
-        <b>devanoabe</b> 2141720204
-    </div>
+<footer style="background-color: #e9e9e9;" class="main-footer">
     <strong>Copyright &copy; 2023 </strong> All rights reserved.
 </footer>
 

@@ -9,6 +9,7 @@ class JenisSoal extends Model
 {
     use HasFactory;
     protected $table = 'jenissoals';
+    public $timestamps= false;
 
     /**
      * The attributes that are mass assignable.

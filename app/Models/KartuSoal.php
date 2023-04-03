@@ -9,6 +9,7 @@ class KartuSoal extends Model
 {
     use HasFactory;
     protected $table = 'kartusoals';
+    public $timestamps= false;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +18,7 @@ class KartuSoal extends Model
      */
     protected $fillable = [
         // 'idKartu', 
-        'idSoal', 
+        'soal_id', 
         'kunci' 
     ];
 }

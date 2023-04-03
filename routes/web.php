@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MataPelajaranController;
 use App\Http\Controllers\TryoutController;
+use App\Http\Controllers\KartuSoalController;
+use App\Http\Controllers\JenisSoalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,10 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     Route::resource('mapel', MataPelajaranController::class)->name('mapel', 'admin.mapel');
     Route::post('CariTryout', [TryoutController::class, 'cariTryout'])->name('cariTryout');
     Route::resource('tryout', TryoutController::class)->name('tryout', 'admin.tryout');
+    Route::post('CariKartu', [KartuSoalController::class, 'cariKartu'])->name('cariKartu');
+    Route::resource('kartu', KartuSoalController::class)->name('kartu', 'admin.kartu');
+    Route::post('CariJenis', [JeniSSoalController::class, 'cariJenis'])->name('cariJenis');
+    Route::resource('jenis', JenisSoalController::class)->name('jenis', 'admin.jenis');
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home.user');
