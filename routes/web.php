@@ -55,3 +55,7 @@ Route::get('/welcome', [HomeController::class, 'welcome'])->name('home.welcome')
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
